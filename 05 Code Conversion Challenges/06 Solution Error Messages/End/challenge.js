@@ -32,11 +32,12 @@ const getErrorMessages = (inputs, criteria) => {
     return Object.keys(inputs).reduce((acc, fieldName) => [
         ...acc,
         ...criteria[fieldName].map(test =>
-            test(inputs[fieldName])),
-    ], []).filter(message => message);
+            test(inputs[fieldName])), //calls the function criteria (value => value.length >= 2 ? '' : 'First name must be at least 2 characters') for each input value
+    ], []).filter(message => message); //checks for message exist (true), checks for empty strings (falsy) and filter out
 }
 
-console.log(getErrorMessages(currentInputValues, inputCriteria));
+console.log(getErrorMessages(currentInputValues, inputCriteria)); //for empty input values return all errors messages, 
+                                                                    //if some input is valid return empty merror message
 
 /*
     Expected Output: [

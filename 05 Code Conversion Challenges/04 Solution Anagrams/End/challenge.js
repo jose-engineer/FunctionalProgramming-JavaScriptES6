@@ -10,8 +10,8 @@ const hasSameLetterCount = (word1, word2) => {
     const word1Count = countOccurrences(word1.split(''));
     const word2Count = countOccurrences(word2.split(''));
 
-    return Object.keys(word1Count).length === Object.keys(word2Count).length
-        && Object.keys(word1Count).every(letter => word1Count[letter] === word2Count[letter]);
+    return Object.keys(word1Count).length === Object.keys(word2Count).length //Object.keys(word1Count) give us all the letters in word1Count
+        && Object.keys(word1Count).every(letter => word1Count[letter] === word2Count[letter]); // arr['a'] gets the value(count) of that letter
 }
 
 const findAnagrams = (word, allWords) => {

@@ -1,8 +1,19 @@
-const map = (arr, func) =>
+const map = (arr, func) => //we don't use {} because the return is implicit, otherwise use return and {}
     arr.reduce((acc, x) => [
         ...acc,
         func(x),
     ], []);
+
+// const map = (arr, func) => {
+//     let newArr = [];
+
+//     for(let i = 0; i < arr.length; i++) {
+//         const result = func(arr[i]);
+//         newArr.push(result);
+//     }
+
+//     return newArr;
+// };
 
 // testing if it works:
 
